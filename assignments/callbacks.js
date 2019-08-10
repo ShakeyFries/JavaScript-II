@@ -2,8 +2,8 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
-
+ 
+/*
   //Given this problem: 
   
   function firstItem(arr, cb) {
@@ -21,31 +21,71 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   firstItem(items, function(first) {
     console.log(first)
   });
-
 */
 
 
+// ========= 1st ==================================================================================
+ 
+// getLength passes the length of the array into the callback.
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+ 
+  return cb (arr.length);
 }
+getLength(items, function(girth){
+  console.log(girth);
+})
 
+// ====================================================================================================
+
+// ========= 2nd ===========================================================================================================
+
+// last passes the last item of the array into the callback.
 function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+  return cb (arr[arr.length - 1]);
 }
+last (items, function(end){
+  console.log(end);
+})
 
+// ====================================================================================================
+
+// ========= 3rd ===============================================================================================
+
+// sumNums adds two numbers (x, y) and passes the result to the callback.
 function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb (x+y);
 }
+sumNums (5,10, function(add){
+  console.log(add);
+})
 
+//=================================================================================================================================
+
+// ========= 4th ============================================================================================================================================
+ 
+// multiplyNums multiplies two numbers and passes the result to the callback.
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+ return cb (x*y);
 }
+multiplyNums (10,10, function(times){
+  console.log (times);
+})
 
+// ========================================================================================================================
+
+// ========= 5th ===============================================================================================================
+
+// contains checks if an item is present inside of the given array/list.
+// Pass true to the callback if it is, otherwise pass false.
 function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+  return cb (list.includes (item));
 }
 
+contains ("yo-yo", items, function(stuff){
+  console.log (stuff);
+})
+
+// ================================================================================================================
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {

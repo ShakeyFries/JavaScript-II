@@ -1,7 +1,28 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function chrisUniverse(){
 
+  const emperor = "Emperor Chris";
+  console.log (`Bow down to ${emperor}`);
 
+  function kyleeWorld(){
+    const ruler = "Ruler Ky";
+    console.log (`Kylee says I love ${emperor}`);
+
+    function jakeLand(){
+      const beggar = "Jake";
+      console.log (`Jake bows down to ${emperor}`);
+      console.log (`Jake made a cake for ${ruler}`);
+
+    }
+    
+    jakeLand()
+  }
+
+  kyleeWorld()
+
+}
+chrisUniverse()
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
