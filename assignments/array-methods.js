@@ -79,14 +79,36 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = 
+runners.reduce(function(accumulator, value){
+// console.log (`I am the accumulator ${accumulator}`);
+// console.log (`I am the total ${value.donation}`);
+return accumulator + value.donation;
+},0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 Clerical error! need every runners Email!
+let emails = []
+runners.forEach(function(em){
+      emails.push(`${em.email}`)
+});
+console.log(emails);
 
-// Problem 2
+// Problem 2 - We decided to let the larger individuals start the race first...because it's fair. Please tell every runner with a 3XL shirt!*/
 
-// Problem 3
+let xxxl = 
+runners.filter (function(threex){
+     return threex.shirt_size ===  "3XL"; 
+});
+console.log(xxxl);
+
+// Problem 3 - All Runners from the company Gigashot got caught juicing! Find out who they are and Kick them out of the race! Find out who works for Gigashot and sack em?
+
+let disqualify = 
+runners.filter (function(dq){
+     return dq.company_name ===  "Gigashots"; 
+});
+console.log(disqualify);
